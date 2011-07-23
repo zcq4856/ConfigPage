@@ -1,0 +1,132 @@
+body.iframe
+{
+    margin: 0px;
+    border: 0px;
+    background-color: transparent;
+}
+
+body.transparent
+{
+    background:transparent;
+}
+
+body table.center
+{
+    border-style:solid;
+    border:0px;
+    background:transparent;
+}
+
+div.background
+{
+    height: 570px;
+    margin: 0px;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-image: url("background.png");
+}
+
+td.title
+{
+    background-color: #afb4db;
+}
+
+table.show
+{
+    margin-top: 20px;
+}
+
+div#Head
+{
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    background-color: transparent;
+}
+
+div#Left_Menu
+{
+    width: 195px;
+    height: auto;
+    background-color: transparent;
+    position: relative;
+    left: 10px;
+    top: 100px;
+    float: left;
+}
+div#Right_MainForm
+{
+    position: relative;
+    top: auto;
+    width: 810px;
+    height: 472px;
+    float: left;
+    left: 6px;
+    top: 90px;
+    background-color: transparent;
+}
+iframe#mainForm
+{
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    margin: 0px;
+}
+
+ul li
+{
+    margin-bottom: 20px;
+}
+
+
+li span.active
+{
+    color: Orange;
+}
+li span
+{
+    cursor: pointer;
+}
+
+h1
+{
+    color: #afdfe4;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    left: 150px;
+}
+
+table
+{
+    border-collapse: collapse;
+    border-style: solid;
+    border-width: 1px;
+    border-color: Navy;
+}
+
+td.title
+{
+    background-color: #afb4db;
+    text-align: left;
+}
+
+table td input[type="text"]
+{
+    width: 100%;
+}
+
+table.nowrap td
+{
+    text-align: right;
+    white-space: nowrap;
+}
+
+table th
+{
+    background-color: #afb4db;
+}
+td.center
+{
+    text-align: center;
+}
