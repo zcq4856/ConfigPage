@@ -2,18 +2,11 @@ body.iframe
 {
     margin: 0px;
     border: 0px;
-    background-color: transparent;
+    background-color: #DEEFDE;
 }
 
 body.transparent
 {
-    background:transparent;
-}
-
-body table.center
-{
-    border-style:solid;
-    border:0px;
     background:transparent;
 }
 
@@ -51,18 +44,18 @@ div#Left_Menu
     background-color: transparent;
     position: relative;
     left: 10px;
-    top: 100px;
+    top: 90px;
     float: left;
 }
 div#Right_MainForm
 {
     position: relative;
     top: auto;
-    width: 810px;
-    height: 472px;
+    width: 760px;
+    height: 417px;
     float: left;
-    left: 6px;
-    top: 90px;
+    left: 20px;
+    top: 95px;
     background-color: transparent;
 }
 iframe#mainForm
@@ -116,7 +109,7 @@ table td input[type="text"]
     width: 100%;
 }
 
-table.nowrap td
+table td
 {
     text-align: right;
     white-space: nowrap;

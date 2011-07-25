@@ -9,26 +9,15 @@
       result ="保存失败!";
     }
     var conf = GetCIPConf();
-
-    function getSelected(shouldtype,realtype)
-    {
-        if(shouldtype == realtype)
-            return "selected";
-            else
-            return "";
-    }
 %>
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="cipnet.css" />
-    <script src="jquery-1.5.1.min.js" type="text/javascript"></script>
-    <script src="cipnet.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="cipnet.css" />
 </head>
 <body class="iframe">
     <form action="CipnetConfig.asp" id="form1" method="post">
-    <table class="show nowrap" width="66%" align="center" border="1" cellpadding="1"
-        cellspacing="1">
+    <table class="show" width="66%" align="center" border="1" cellpadding="1" cellspacing="1">
         <tr>
             <td class="title" title="cipnetConfig" colspan="4">
                 CIPNET配置
@@ -46,6 +35,20 @@
             </td>
             <td class="text">
                 <input id="ServerPort" name="ServerPort" type="text" value="<%Response.write(conf.PORT) %>" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                采集 GUID:
+            </td>
+            <td class="text">
+                <input id="GatherGuid" name="sensorGuid" type="text" value="<%Response.write(conf.Guid) %>" />
+            </td>
+            <td>
+                其他：
+            </td>
+            <td class="text">
+                <input id="Others" name="Other" type="text" value="<%Response.write(conf.Guid) %>" />
             </td>
         </tr>
         <tr>
@@ -69,44 +72,11 @@
             <td class="text">
                 <input id="HeartbeatPeriod" name="beatInterval" type="text" value="<%Response.write(conf.BInter) %>" />
             </td>
-            <td>
-                行政区划代码:
-            </td>
-            <td class="text">
-                <input id="region" name="region" type="text" value="<%Response.write(conf.Region) %>" />
+            <td colspan="2">
             </td>
         </tr>
         <tr>
-            <td>
-                建筑类别:
-            </td>
-            <td class="text">
-                <select id="buildingCategory" name="buildingCategory" style="width:100%">
-                    <option value="A" <%=getSelected("A",conf.BuildCate) %>>办公建筑</option>
-                    <option value="B" <%=getSelected("B",conf.BuildCate) %>>商场建筑</option>
-                    <option value="C" <%=getSelected("C",conf.BuildCate) %>>宾馆饭店建筑</option>
-                    <option value="D" <%=getSelected("D",conf.BuildCate) %>>文化教育建筑</option>
-                    <option value="E" <%=getSelected("E",conf.BuildCate) %>>医疗卫生建筑</option>
-                    <option value="F" <%=getSelected("F",conf.BuildCate) %>>体育建筑</option>
-                    <option value="G" <%=getSelected("G",conf.BuildCate) %>>综合建筑</option>
-                    <option value="H" <%=getSelected("H",conf.BuildCate) %>>其它建筑</option>
-                </select>
-            </td>
-            <td>
-                建筑识别:
-            </td>
-            <td class="text">
-            <input id="buildingIdentification" name="buildingIdentification" type="text" value="<%Response.write(conf.BuildIden) %>" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                数据采集器识别码:
-            </td>
-            <td class="text">
-                <input id="collectorIdentification" name="collectorIdentification" type="text" value="<%Response.write(conf.ColleIden) %>" />
-            </td>
-            <td colspan="2" align="right">
+            <td colspan="4" align="right">
                 <input id="save" name="save" value="true" type="hidden" />
                 <span>
                     <%Response.Write(result) %></span>

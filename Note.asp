@@ -10,7 +10,7 @@
 </head>
 <body class="iframe">
     <form action= id="form1">
-    <div style="padding-top:7px">
+    <div>
     <%Response.Write(log) %>
     </div>
     </form>
