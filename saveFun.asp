@@ -1,7 +1,7 @@
 <%@  language="javascript" %>
 <%
-    var SourceConfigFile = "\\Nand\\www\\wwwpub\\sample.xml", //Server.MapPath("sample.xml"),"\\Nand\\www\\wwwpub\\sample.xml"
-        SourceLogFile = "\\logfile.log", //Server.MapPath("logfile.log"),"\\logfile.log"
+    var SourceConfigFile = Server.MapPath("sample.xml"), //Server.MapPath("sample.xml"),"\\Nand\\www\\wwwpub\\sample.xml"
+        SourceLogFile = Server.MapPath("logfile.log"), //Server.MapPath("logfile.log"),"\\logfile.log"
                 rootNodeNodeName = "CIPNET",
                  CIP_sIpNodeName = "serverIP",
               CIP_sPortrNodeName = "serverPort",
