@@ -28,7 +28,7 @@ function produceHtml(meters)
         {
             var meter = bus.Meters[iitem];
             tableHtml +="<tr>";
-            tableHtml +="<td><input id='address' type='text' name='address' style='width: 97%; background-color: #FFFFEF' value='";
+            tableHtml +="<td><input id='address'class='num_4' type='text' name='address' style='width: 97%; background-color: #FFFFEF' value='";
             tableHtml +=meter.meterID;
             tableHtml +="' /></td>";
             tableHtml +="<td><select id='busNum' type='text' name='busNum' style='width: 97%; background-color: #FFFFEF'>";
@@ -216,7 +216,7 @@ function getL2Select(value)
             <th scope="col" width="12%" class="style1">
                 二级子项
             </th>
-            <th class="style1">
+            <th class="style1"> 
             </th>
         </tr>
         <%Response.Write(tablehtml) %>

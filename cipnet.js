@@ -45,7 +45,94 @@
         if (parseInt(msg) >= 0)
             $('#result').text("保存成功" + msg + "条记录！");
     };
+
+    $("#SaveCipnetConfig").click(function () {
+
+        var ipreg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
+        var sip = $(".IP").val();
+        if (!ipreg.test(sip)) {
+            alert("请按'[0-255].[0-255].[0-255].[0-255]的正确格式输入IP地址！");
+            return false;
+        }
+
+        var xreg = /^[1-9]\d{5}(?!\d)$/;
+        var sreg = $("#region").val();
+        if (!xreg.test(sreg)) {
+            alert("请按六位数字的正确格式输入邮编地址！");
+            return false;
+        }
+
+        //        var portReg = /^[4-9][0-9]{3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]{1}|6553[0-5]$/;
+        var portReg = /(^[4-9][0-9][0-9][0-9]$)|(^[1-6][0-5][0-5][0-3][0-5]$)/;
+        var port = $("#ServerPort").val();
+        if (!portReg.test(port)) {
+            alert("端口号请输入4000-65535之间的数！");
+            return false;
+        }
+
+        var count = 0;
+        $(".num_2").each(function () {
+            var obj = $(this).val();
+            var num = 2;
+            if (!checkNum(num, $(this).val(), $(this).parents("td").prev("td").text())) {
+                count++;
+                return false;
+            }
+
+        });
+
+        if (count == 0)
+            return true;
+        else
+            return false;
+
+    });
+
+    $("#SaveMeter").click(function () {
+        var count4 = 0;
+        $(".num_4").each(function () {
+            var obj = $(this).val();
+            var num = 4;
+
+            if (!checkNum(num, $(this).val(), "地址栏:")) {
+                count4++;
+                $(this).focus();
+                $(this).select();
+                return false;
+            }
+
+        });
+
+        if (count4 == 0)
+            return true;
+        else
+            return false;
+    });
+
 });
+
+
+function checkNum(num, obj, mesg) {
+    var ppNum,numstr;
+    if (num == 2) {
+        ppNum = /^\d{2}$/;
+        numstr = "00-99";
+    }
+    else
+        if (num == 4) {
+            ppNum = /^\d{4}$/;
+            numstr = "0000-9999";
+        }
+
+    if (!ppNum.test(obj)) {
+        alert(mesg + "请输入" + numstr + "之间的数字！");
+        return false;
+    }
+    else
+        return true;
+
+}
+
 
 function delRow(src) {
     $(src).remove();

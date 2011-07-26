@@ -39,13 +39,13 @@
                 Server IP:
             </td>
             <td class="text">
-                <input id="ServerIP" name="ServerIP" type="text" value="<%Response.write(conf.IP) %>" />
+                <input id="ServerIP" class="IP" name="ServerIP" type="text" value="<%Response.write(conf.IP) %>" />
             </td>
             <td>
                 Server Port:
             </td>
             <td class="text">
-                <input id="ServerPort" name="ServerPort" type="text" value="<%Response.write(conf.PORT) %>" />
+                <input id="ServerPort" class="port" name="ServerPort" type="text" value="<%Response.write(conf.PORT) %>" />
             </td>
         </tr>
         <tr>
@@ -53,13 +53,13 @@
                 采集间隔(分钟):
             </td>
             <td class="text">
-                <input id="GatherPeriod" name="collectInterval" type="text" value="<%Response.write(conf.CInter) %>" />
+                <input id="GatherPeriod" class="num_2" name="collectInterval" type="text" value="<%Response.write(conf.CInter) %>" />
             </td>
             <td>
                 发送间隔(分钟):
             </td>
             <td class="text">
-                <input id="SendPeriod" name="sendInterval" type="text" value="<%Response.write(conf.SInter) %>" />
+                <input id="SendPeriod" class="num_2" name="sendInterval" type="text" value="<%Response.write(conf.SInter) %>" />
             </td>
         </tr>
         <tr>
@@ -67,7 +67,7 @@
                 心跳间隔(分钟):
             </td>
             <td class="text">
-                <input id="HeartbeatPeriod" name="beatInterval" type="text" value="<%Response.write(conf.BInter) %>" />
+                <input id="HeartbeatPeriod" class="num_2" name="beatInterval" type="text" value="<%Response.write(conf.BInter) %>" />
             </td>
             <td>
                 行政区划代码:
@@ -96,7 +96,7 @@
                 建筑识别:
             </td>
             <td class="text">
-            <input id="buildingIdentification" name="buildingIdentification" type="text" value="<%Response.write(conf.BuildIden) %>" />
+            <input id="buildingIdentification" class="num_2" name="buildingIdentification" type="text" value="<%Response.write(conf.BuildIden) %>" />
             </td>
         </tr>
         <tr>
@@ -104,7 +104,7 @@
                 数据采集器识别码:
             </td>
             <td class="text">
-                <input id="collectorIdentification" name="collectorIdentification" type="text" value="<%Response.write(conf.ColleIden) %>" />
+                <input id="collectorIdentification" class="num_2" name="collectorIdentification" type="text" value="<%Response.write(conf.ColleIden) %>" />
             </td>
             <td colspan="2" align="right">
                 <input id="save" name="save" value="true" type="hidden" />
