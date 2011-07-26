@@ -51,6 +51,8 @@
         var ipreg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/;
         var sip = $(".IP").val();
         if (!ipreg.test(sip)) {
+            $(".IP").focus();
+            $(".IP").select();
             alert("请按'[0-255].[0-255].[0-255].[0-255]的正确格式输入IP地址！");
             return false;
         }
@@ -58,6 +60,8 @@
         var xreg = /^[1-9]\d{5}(?!\d)$/;
         var sreg = $("#region").val();
         if (!xreg.test(sreg)) {
+            $("#region").focus();
+            $("#region").select();
             alert("请按六位数字的正确格式输入邮编地址！");
             return false;
         }
@@ -66,9 +70,27 @@
         var portReg = /(^[4-9][0-9][0-9][0-9]$)|(^[1-6][0-5][0-5][0-3][0-5]$)/;
         var port = $("#ServerPort").val();
         if (!portReg.test(port)) {
+            $("#ServerPort").focus();
+            $("#ServerPort").select();
             alert("端口号请输入4000-65535之间的数！");
             return false;
         }
+
+        var numS = /^[1-9]\d*|0$/;
+        var con = 0;
+        $(".num_Time").each(function () {
+            var sNum = $(this).val();
+            if (!numS.test(sNum)) {
+                con++;
+                $(this).focus();
+                $(this).select();
+                alert("时间请输入非负整数！");
+                return false;
+            }
+        });
+        if (con != 0)
+            return false;
+
 
         var count = 0;
         $(".num_2").each(function () {
@@ -76,6 +98,8 @@
             var num = 2;
             if (!checkNum(num, $(this).val(), $(this).parents("td").prev("td").text())) {
                 count++;
+                $(this).focus();
+                $(this).select();
                 return false;
             }
 
@@ -113,7 +137,7 @@
 
 
 function checkNum(num, obj, mesg) {
-    var ppNum,numstr;
+    var ppNum, numstr;
     if (num == 2) {
         ppNum = /^\d{2}$/;
         numstr = "00-99";
