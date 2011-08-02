@@ -1,3 +1,41 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <?xml-stylesheet type='text/xsl'?>
-<CIPNET><serverIP>192.168.121.1</serverIP><serverPort>4000</serverPort><collectInterval>01</collectInterval><sendInterval>01</sendInterval><beatInterval>03</beatInterval><region>500001</region><buildingCategory>A</buildingCategory><buildingIdentification>01</buildingIdentification><collectorIdentification>32</collectorIdentification><meterInfo><bus id="1"><meter><meterID>0001</meterID><dybb>1</dybb><dlbb>1</dlbb><energyConsumptionCa>水</energyConsumptionCa><energyConsumptionItem>照明插座用电</energyConsumptionItem><level1Item>照明与插座</level1Item><level2Item>冷冻泵</level2Item></meter></bus><bus id="2"><meter><meterID>0002</meterID><dybb>3</dybb><dlbb>3</dlbb><energyConsumptionCa>水</energyConsumptionCa><energyConsumptionItem>动力用电</energyConsumptionItem><level1Item>健身房</level1Item><level2Item>冷却泵</level2Item></meter></bus><bus id="4"><meter><meterID>0003</meterID><dybb>5</dybb><dlbb>6</dlbb><energyConsumptionCa>其它能源</energyConsumptionCa><energyConsumptionItem>空调用电</energyConsumptionItem><level1Item>其它</level1Item><level2Item>电锅炉</level2Item></meter></bus></meterInfo></CIPNET>
+<CIPNET>
+    <serverIP>218.246.86.152</serverIP>
+    <serverPort>8080</serverPort>
+    <collectInterval>1</collectInterval>
+    <sendInterval>2</sendInterval>
+    <beatInterval>1</beatInterval>
+    <region>500000</region>
+    <buildingCategory>B</buildingCategory>
+    <buildingIdentification>08</buildingIdentification>
+    <collectorIdentification>01</collectorIdentification>
+    <private>
+        <authentication>aaaaaaaaaaaaaaaa</authentication>
+        <IsAES>false</IsAES>
+        <EnAES>aaaaaaaaaaaaaaaa</EnAES>
+        <DeAES>aaaaaaaaaaaaaaaa</DeAES>
+    </private>
+    <meterInfo>
+        <bus id="1">
+            <meter>
+                <meterID>0001</meterID>
+                <dybb>1</dybb>
+                <dlbb>1</dlbb>
+                <energyConsumptionCa>水</energyConsumptionCa>
+                <energyConsumptionItem>照明插座用电</energyConsumptionItem>
+                <level1Item>照明与插座</level1Item>
+                <level2Item>冷冻泵</level2Item>
+            </meter>
+            <meter>
+                <meterID>0002</meterID>
+                <dybb>1</dybb>
+                <dlbb>1</dlbb>
+                <energyConsumptionCa>水</energyConsumptionCa>
+                <energyConsumptionItem>照明插座用电</energyConsumptionItem>
+                <level1Item>照明与插座</level1Item>
+                <level2Item>冷冻泵</level2Item>
+            </meter>
+        </bus>
+    </meterInfo>
+</CIPNET>
