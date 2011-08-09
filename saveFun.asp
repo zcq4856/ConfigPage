@@ -154,7 +154,7 @@
     var METER_SUBTYPE_2="2"; 
 
 function SaveConfigInfo(){
-    CIP = GetCIPConfstr();
+    /*CIP = GetCIPConfstr();
     CIP = CIP.split(",");
             serverIP=CIP[0];
           serverPort=CIP[1];
@@ -162,7 +162,7 @@ function SaveConfigInfo(){
           sensorGuid=CIP[3];
     collectInterval =CIP[4];
        sendInterval =CIP[5];
-       beatInterval =CIP[6];
+       beatInterval =CIP[6];*/
     str1=Request.Form("guid");
     str2=Request.Form("address");
     str3=Request.Form("busNum");
@@ -187,9 +187,14 @@ function SaveConfigInfo(){
     var objChild5;
     var objPI;
     var PINode;
-    objDom = new ActiveXObject("Microsoft.XMLDOM");
-
-    //写入样式
+    //objDom = new ActiveXObject("Microsoft.XMLDOM");
+    var objDom = GetConfXMLObj();
+    CipNetroot = objDom.documentElement.selectSingleNode("/CIPNET");
+    MeterInfoRoot = objDom.documentElement.selectSingleNode("/CIPNET/meterInfo");
+    MeterInfoRoot.parentNode.removeChild(MeterInfoRoot);
+    MeterInfoRoot = objDom.createElement("meterInfo");
+    CipNetroot.appendChild(MeterInfoRoot);
+    /*//写入样式
     PINode=objDom.createProcessingInstruction("xml-stylesheet", "type='text/xsl'");
     objDom.appendChild(PINode);
     //创建根接点
@@ -226,7 +231,7 @@ function SaveConfigInfo(){
     CipNetRoot.appendChild(objBeatInterval);
     
     MeterInfoRoot=objDom.createElement("meterInfo");
-    CipNetRoot.appendChild(MeterInfoRoot);
+    CipNetRoot.appendChild(MeterInfoRoot);*/
 
     NodeBus1=objDom.createElement("bus") ;
     NodeBus1.setAttribute("id",METER_BUS_1);
@@ -291,22 +296,12 @@ function SaveConfigInfo(){
     if (NodeBus4.hasChildNodes){
         MeterInfoRoot.appendChild(NodeBus4);
     }          
-    objPI = objDom.createProcessingInstruction("xml","version='1.0'");
+    //objPI = objDom.createProcessingInstruction("xml","version='1.0'");
 
-    objDom.insertBefore(objPI, objDom.childNodes[0]);
+    //objDom.insertBefore(objPI, objDom.childNodes[0]);
 
     objDom.save(SourceConfigFile);
-  	Response.Write(guidslength);
-    Response.End();
-    //释放资源
-    //objDom = Nothing
-    //objRoot = Nothing
-    //objField = Nothing
-    //objFieldValue = Nothing
-    //objattID = Nothing
-    //objattTabOrder = Nothing
-    //objPI = Nothing
-    //PINode=Nothing
+    return "保存成功!" + guidslength + "条!";
 }
 
 %>

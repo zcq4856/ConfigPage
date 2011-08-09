@@ -22,18 +22,6 @@ $(document).ready(function () {
         $("#mainForm").attr("src", "Note.asp");
     });
 
-    $("#SaveMeter").click(function () {
-        var option = {
-            type: "POST",
-            url: "MetersConfig.asp",
-            data: $("#form1").serialize(),
-            success: function (msg) {
-                SuccessFun(msg);
-            }
-        };
-        $.ajax(option);
-    });
-
 
     $("#Left_Menu ul li span").first().addClass("active");
     $("#Left_Menu ul li span").click(function () {
@@ -41,11 +29,6 @@ $(document).ready(function () {
         ele.removeClass("active");
         $(this).addClass("active");
     });
-
-    function SuccessFun(msg) {
-        if (parseInt(msg) >= 0)
-            $('#result').text("保存成功" + msg + "条记录！");
-    };
 });
 
 function delRow(src) {

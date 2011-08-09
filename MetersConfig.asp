@@ -2,7 +2,7 @@
 <%
 var isSave =Request.Form("save");
 if(isSave=="true"){
-      SaveConfigInfo();
+      var rt = SaveConfigInfo();
     }
 
 var METER_TYPE_1="1",
@@ -124,8 +124,8 @@ var subtype1selected = value==METER_TYPE_1?"selected":"",
             <td colspan="6" class="center" align="center">
                 <input id="save" name="save" value="true" type="hidden" />
                 <input id="addBT" name="add" type="button" onclick="addRow()" value="Ìí¼Ó" />
-                <input id="SaveMeter" name="SaveMeter" type="button" value="±£´æ" />
-                <span id="result"></span>
+                <input id="SaveMeter" name="SaveMeter" type="submit" value="±£´æ" />
+                <span id="result"><%if(rt!=undefined)Response.Write(rt) %></span>
             </td>
         </tr>
     </table>
